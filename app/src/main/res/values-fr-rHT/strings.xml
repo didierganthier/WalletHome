@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Wallet Home</string>
+    <string name="open_navigation_drawer">Ouvrir Navigation Drawer</string>
+    <string name="close_navigation_drawer">Fermer Navigation Drawer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="date">5 Juin 2020</string>
+    <string name="type">Type</string>
+    <string name="description">Description</string>
+    <string name="amount">6000000.00</string>
+    <string name="email">Email</string>
+    <string name="hint_email">votreemail@email.com</string>
+    <string name="password">Mot de Passe</string>
+    <string name="hint_password">votre mot de passe</string>
+    <string name="forgot_password">Mot de passe oublié?</string>
+    <string name="sign_in">Se Connecter</string>
+    <string name="no_account">Pas de compte? Créer compte</string>
+    <string name="register">Créer compte</string>
+    <string name="already_user">Déjà un compte? Se connecter</string>
+    <string name="income">Rentrées</string>
+    <string name="expense">Dépenses</string>
+    <string name="dashboard">Tableau</string>
+    <string name="AMOUNT">MONTANT:</string>
+    <string name="TYPE">TYPE:</string>
+    <string name="NOTE">NOTE:</string>
+    <string name="cancel">Annuler</string>
+    <string name="save">Ajouter</string>
+</resources>

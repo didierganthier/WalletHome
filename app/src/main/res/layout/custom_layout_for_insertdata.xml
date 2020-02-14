@@ -29,7 +29,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="AMOUNT:"/>
+                        android:text="@string/AMOUNT"/>
 
                 </RelativeLayout>
 
@@ -63,7 +63,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TYPE:"/>
+                        android:text="@string/TYPE"/>
 
                 </RelativeLayout>
 
@@ -97,7 +97,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="NOTE:"/>
+                        android:text="@string/NOTE"/>
 
                 </RelativeLayout>
 
@@ -132,7 +132,7 @@
                         android:id="@+id/btnCancel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Cancel"
+                        android:text="@string/cancel"
                         android:textAppearance="?android:textAppearanceMedium"
                         android:textColor="@android:color/white"
                         android:background="@android:color/holo_red_dark"/>
@@ -149,7 +149,7 @@
                         android:id="@+id/btnSave"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Save"
+                        android:text="@string/save"
                         android:textAppearance="?android:textAppearanceMedium"
                         android:textColor="@android:color/white"
                         android:background="@android:color/holo_green_light"/>

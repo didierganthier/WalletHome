@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Wallet Home</string>
+    <string name="open_navigation_drawer">Ouvè navigatè a</string>
+    <string name="close_navigation_drawer">Fèmen Navigatè a</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Fragman Balnch</string>
+    <string name="date">5 Jen 2020</string>
+    <string name="type">Tip</string>
+    <string name="description">Deskripsyon</string>
+    <string name="amount">6000000.00</string>
+    <string name="email">Imèl</string>
+    <string name="hint_email">emailoul@email.com</string>
+    <string name="password">Modpas</string>
+    <string name="hint_password">ekri modpas ou la</string>
+    <string name="forgot_password">Ou bliye modpas ou?</string>
+    <string name="sign_in">Konekte</string>
+    <string name="no_account">Ou pa gen kont? Kreye youn</string>
+    <string name="register">Kreye on kont</string>
+    <string name="already_user">Ou deja gen kont? Konekte</string>
+    <string name="income">Rantre</string>
+    <string name="expense">Depans</string>
+    <string name="dashboard">Tablodbò</string>
+    <string name="AMOUNT">MONTAN:</string>
+    <string name="TYPE">TIP:</string>
+    <string name="NOTE">NÒT:</string>
+    <string name="cancel">Bay Vag</string>
+    <string name="save">Ajoute</string>
+</resources>

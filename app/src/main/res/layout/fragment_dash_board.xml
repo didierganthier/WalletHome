@@ -34,7 +34,7 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:textAppearanceLarge"
                         android:textColor="@android:color/black"
-                        android:text="Income"/>
+                        android:text="@string/income"/>
 
                 </RelativeLayout>
 
@@ -49,7 +49,7 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:textAppearanceLarge"
                         android:textColor="@android:color/holo_red_dark"
-                        android:text="Expense"/>
+                        android:text="@string/expense"/>
 
                 </RelativeLayout>
 
@@ -114,7 +114,7 @@
                 android:id="@+id/expense_ft_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Expense"
+                android:text="@string/expense"
                 android:padding="5dp"
                 android:textColor="@android:color/white"
                 android:background="@android:color/holo_red_dark"
@@ -148,7 +148,7 @@
                 android:id="@+id/income_ft_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Income"
+                android:text="@string/income"
                 android:textColor="@android:color/white"
                 android:padding="5dp"
                 android:background="@color/colorGreenTheme"

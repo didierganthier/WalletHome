@@ -3,17 +3,17 @@
 
     <item
         android:id="@+id/dashboard"
-        android:title="Dashboard"
+        android:title="@string/dashboard"
         android:icon="@drawable/dashboard"/>
 
     <item
         android:id="@+id/income"
-        android:title="Income"
+        android:title="@string/income"
         android:icon="@drawable/income"/>
 
     <item
         android:id="@+id/expense"
-        android:title="Expense"
+        android:title="@string/expense"
         android:icon="@drawable/expense"/>
 
 </menu>
