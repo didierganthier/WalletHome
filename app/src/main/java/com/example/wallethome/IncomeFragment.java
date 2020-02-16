@@ -2,6 +2,7 @@ package com.example.wallethome;
 
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,9 +16,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.wallethome.Model.Data;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -25,6 +29,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.text.DateFormat;
+import java.util.Date;
 
 
 /**
@@ -44,6 +51,13 @@ public class IncomeFragment extends Fragment
 
     private Button btnUpdate, btnDelete;
 
+    private String type, note;
+    private int amount;
+
+    private String post_key;
+
+    private ProgressDialog progressDialog;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -55,6 +69,8 @@ public class IncomeFragment extends Fragment
         FirebaseUser user = mAuth.getCurrentUser();
 
         String uid = user.getUid();
+
+        progressDialog = new ProgressDialog(getActivity());
 
         mIncomeDatabase = FirebaseDatabase.getInstance().getReference().child("IncomeData").child(uid);
 
@@ -108,7 +124,7 @@ public class IncomeFragment extends Fragment
                 mIncomeDatabase
         ) {
             @Override
-            protected void populateViewHolder(MyViewHolder myViewHolder, Data data, int i)
+            protected void populateViewHolder(MyViewHolder myViewHolder, final Data data, final int i)
             {
                 myViewHolder.setType(data.getType());
                 myViewHolder.setNote(data.getNote());
@@ -119,6 +135,12 @@ public class IncomeFragment extends Fragment
                     @Override
                     public void onClick(View v)
                     {
+                        post_key = getRef(i).getKey();
+
+                        type = data.getType();
+                        note = data.getNote();
+                        amount = data.getAmount();
+
                         updateDataItem();
                     }
                 });
@@ -175,6 +197,15 @@ public class IncomeFragment extends Fragment
         edtType = myView.findViewById(R.id.type_edt);
         edtNote = myView.findViewById(R.id.note_edt);
 
+        edtType.setText(type);
+        edtType.setSelection(type.length());
+
+        edtNote.setText(note);
+        edtNote.setSelection(note.length());
+
+        edtAmount.setText(String.valueOf(amount));
+        edtAmount.setSelection(String.valueOf(amount).length());
+
         btnUpdate = myView.findViewById(R.id.btnUp_Update);
         btnDelete = myView.findViewById(R.id.btnUp_Delete);
 
@@ -184,7 +215,41 @@ public class IncomeFragment extends Fragment
             @Override
             public void onClick(View v)
             {
+                progressDialog.setTitle("Updating Values");
+                progressDialog.setMessage("Please wait while we are updating your data");
+                progressDialog.setCanceledOnTouchOutside(false);
+                progressDialog.show();
 
+                type = edtType.getText().toString().trim();
+                note = edtNote.getText().toString().trim();
+
+                String mdamount = String.valueOf(amount);
+
+                mdamount = edtAmount.getText().toString().trim();
+
+                int myAmount = Integer.parseInt(mdamount);
+
+                String mDate = DateFormat.getDateInstance().format(new Date());
+
+                Data data = new Data(myAmount, type, note, post_key, mDate);
+
+                mIncomeDatabase.child(post_key).setValue(data)
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task)
+                            {
+                                if(task.isSuccessful())
+                                {
+                                    Toast.makeText(getActivity(), "Data successfully updated", Toast.LENGTH_SHORT).show();
+                                }
+                                else
+                                {
+                                    Toast.makeText(getActivity(), "Sorry, " + task.getException(), Toast.LENGTH_SHORT).show();
+                                }
+                                progressDialog.dismiss();
+                                dialog.dismiss();
+                            }
+                        });
             }
         });
 
@@ -192,7 +257,28 @@ public class IncomeFragment extends Fragment
             @Override
             public void onClick(View v)
             {
-                dialog.dismiss();
+                progressDialog.setTitle("Updating Values");
+                progressDialog.setMessage("Please wait while we are updating your data");
+                progressDialog.setCanceledOnTouchOutside(false);
+                progressDialog.show();
+
+                mIncomeDatabase.child(post_key).removeValue()
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task)
+                            {
+                                if(task.isSuccessful())
+                                {
+                                    Toast.makeText(getActivity(), "Data successfuly removed", Toast.LENGTH_SHORT).show();
+                                }
+                                else
+                                {
+                                    Toast.makeText(getActivity(), "Sorry, " + task.getException(), Toast.LENGTH_SHORT).show();
+                                }
+                                progressDialog.dismiss();
+                                dialog.dismiss();
+                            }
+                        });
             }
         });
 
