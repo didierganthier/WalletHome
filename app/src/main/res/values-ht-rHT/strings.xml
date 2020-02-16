@@ -27,4 +27,6 @@
     <string name="NOTE">NÒT:</string>
     <string name="cancel">Bay Vag</string>
     <string name="save">Ajoute</string>
+    <string name="update">Chanje</string>
+    <string name="delete">Efase</string>
 </resources>

@@ -26,4 +26,6 @@
     <string name="NOTE">NOTE:</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
 </resources>
