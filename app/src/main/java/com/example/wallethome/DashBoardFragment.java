@@ -25,8 +25,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -44,6 +47,8 @@ public class DashBoardFragment extends Fragment {
     private boolean isOpen = false;
 
     private Animation fadeOpen, fadeClose;
+
+    private TextView totalIncomeResult, totalExpenseResult;
 
     private ProgressDialog progressDialog;
 
@@ -65,6 +70,9 @@ public class DashBoardFragment extends Fragment {
 
         mIncomeDatabase = FirebaseDatabase.getInstance().getReference().child("IncomeData").child(uid);
         mExpenseDatabase = FirebaseDatabase.getInstance().getReference().child("ExpenseData").child(uid);
+
+        totalIncomeResult = view.findViewById(R.id.income_set_result);
+        totalExpenseResult = view.findViewById(R.id.expense_set_result);
 
         fab_main_btn = view.findViewById(R.id.main_plus_btn);
         fab_income_btn = view.findViewById(R.id.income_ft_btn);
@@ -111,6 +119,54 @@ public class DashBoardFragment extends Fragment {
 
                     isOpen = true;
                 }
+            }
+        });
+
+        mIncomeDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot)
+            {
+                int total_amount = 0;
+
+                for(DataSnapshot myDataSnapshot: dataSnapshot.getChildren())
+                {
+                    Data data = myDataSnapshot.getValue(Data.class);
+
+                    total_amount += data.getAmount();
+
+                    String stTotalAmount = String.valueOf(total_amount);
+
+                    totalIncomeResult.setText(stTotalAmount);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        mExpenseDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot)
+            {
+                int total_amount = 0;
+
+                for(DataSnapshot myDataSnapshot: dataSnapshot.getChildren())
+                {
+                    Data data = myDataSnapshot.getValue(Data.class);
+
+                    total_amount += data.getAmount();
+
+                    String stTotalAmount = String.valueOf(total_amount);
+
+                    totalExpenseResult.setText(stTotalAmount);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
             }
         });
 
