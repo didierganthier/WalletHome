@@ -190,7 +190,7 @@ public class IncomeFragment extends Fragment
         AlertDialog.Builder mydialog = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = LayoutInflater.from(getActivity());
         View myView = inflater.inflate(R.layout.update_data_item, null);
-        mydialog.setCancelable(false);
+        mydialog.setCancelable(true);
         mydialog.setView(myView);
 
         edtAmount = myView.findViewById(R.id.amount_edt);

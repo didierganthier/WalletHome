@@ -28,4 +28,5 @@
     <string name="save">Ajouter</string>
     <string name="update">Modifier</string>
     <string name="delete">Effacer</string>
+    <string name="change_theme">Changer thème</string>
 </resources>

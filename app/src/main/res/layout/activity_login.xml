@@ -41,6 +41,8 @@
         android:layout_marginStart="35dp"
         android:inputType="textEmailAddress"
         android:backgroundTint="@android:color/black"
+        android:textColor="?attr/textColor"
+        android:textColorHint="?attr/metaTextColor"
         android:layout_marginEnd="35dp"
         android:drawableEnd="@drawable/ic_email_black_24dp"
         android:hint="@string/hint_email"/>
@@ -66,6 +68,8 @@
         android:layout_marginEnd="35dp"
         android:drawableEnd="@drawable/ic_lock_black_24dp"
         android:inputType="textPassword"
+        android:textColor="?attr/textColor"
+        android:textColorHint="?attr/metaTextColor"
         android:hint="@string/hint_password"
         android:backgroundTint="@android:color/black"/>
 
@@ -74,6 +78,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/forgot_password"
+        android:textColor="?attr/textColor"
         android:layout_marginTop="15dp"
         android:gravity="center"
         android:layout_below="@id/login_password"/>
@@ -98,8 +103,8 @@
         android:layout_below="@id/login_btn"
         android:layout_marginTop="10dp"
         android:gravity="center"
+        android:textColor="?attr/textColor"
         android:text="@string/no_account"
-        android:textSize="15sp"
-        android:textColor="@android:color/black"/>
+        android:textSize="15sp"/>
 
 </RelativeLayout>

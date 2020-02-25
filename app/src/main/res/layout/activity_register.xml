@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/bgColor"
     tools:context=".RegisterActivity">
 
     <LinearLayout
@@ -41,6 +42,8 @@
         android:layout_marginStart="35dp"
         android:inputType="textEmailAddress"
         android:backgroundTint="@android:color/black"
+        android:textColorHint="?attr/metaTextColor"
+        android:textColor="?attr/textColor"
         android:layout_marginEnd="35dp"
         android:drawableEnd="@drawable/ic_email_black_24dp"
         android:hint="@string/hint_email"/>
@@ -66,6 +69,8 @@
         android:layout_marginEnd="35dp"
         android:drawableEnd="@drawable/ic_lock_black_24dp"
         android:inputType="textPassword"
+        android:textColorHint="?attr/metaTextColor"
+        android:textColor="?attr/textColor"
         android:hint="@string/hint_password"
         android:backgroundTint="@android:color/black"/>
 
@@ -91,6 +96,6 @@
         android:gravity="center"
         android:text="@string/already_user"
         android:textSize="15sp"
-        android:textColor="@android:color/black"/>
+        android:textColor="?attr/textColor"/>
 
 </RelativeLayout>

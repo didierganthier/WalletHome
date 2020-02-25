@@ -16,6 +16,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="?attr/bgColor"
             android:orientation="vertical">
 
             <LinearLayout
@@ -33,7 +34,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:textAppearanceLarge"
-                        android:textColor="@android:color/black"
+                        android:textColor="?attr/textColor"
                         android:text="@string/income"/>
 
                 </RelativeLayout>
@@ -72,7 +73,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:textAppearanceLarge"
-                        android:textColor="@android:color/black"
+                        android:textColor="?attr/textColor"
                         android:text="000.00"/>
 
                 </RelativeLayout>
@@ -118,6 +119,7 @@
                     android:layout_height="wrap_content"
                     android:text="Income:"
                     android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="?attr/textColor"
                     android:padding="10dp"/>
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -131,6 +133,7 @@
                     android:layout_height="wrap_content"
                     android:text="Expense:"
                     android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="?attr/textColor"
                     android:padding="10dp"/>
 
                 <androidx.recyclerview.widget.RecyclerView

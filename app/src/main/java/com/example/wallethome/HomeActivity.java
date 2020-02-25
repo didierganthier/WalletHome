@@ -3,12 +3,14 @@ package com.example.wallethome;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
@@ -28,6 +30,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            setTheme(R.style.DarkTheme);
+        } else {
+            setTheme(R.style.LightTheme);
+        }
+
         setContentView(R.layout.activity_home);
 
         Toolbar toolbar = findViewById(R.id.my_toolbar);
@@ -124,6 +133,18 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             case R.id.income:
                 fragment = new IncomeFragment();
                 break;
+            case R.id.theme:
+                if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
+                {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                }
+                else
+                {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                }
+
+                finish();
+                startActivity(new Intent(HomeActivity.this, HomeActivity.this.getClass()));
         }
 
         if(fragment != null)

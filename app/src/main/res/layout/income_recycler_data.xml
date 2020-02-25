@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="5dp"
+    android:background="@drawable/custom_shape"
     app:cardElevation="5dp"
     android:elevation="5dp">
 
@@ -11,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="?attr/bgColor"
         android:layout_margin="5dp">
 
         <RelativeLayout
@@ -23,6 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/date"
+                android:layout_marginStart="10dp"
                 android:textAppearance="?android:textAppearanceSmall"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"/>
@@ -40,6 +43,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/type"
                 android:maxLines="1"
+                android:layout_marginStart="10dp"
                 android:textAppearance="?android:textAppearanceSmall"
                 android:textStyle="bold"
                 android:textColor="@color/colorAccent"/>
@@ -51,7 +55,7 @@
                 android:text="@string/description"
                 android:layout_below="@id/type_txt_income"
                 android:textAppearance="?android:textAppearanceSmall"
-                android:textColor="@android:color/black"/>
+                android:textColor="?attr/textColor"/>
 
 
         </RelativeLayout>

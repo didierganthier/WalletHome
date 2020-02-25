@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/custom_shape">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -29,6 +30,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="?attr/bgColor"
                         android:text="@string/AMOUNT"/>
 
                 </RelativeLayout>
@@ -42,6 +44,7 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="?attr/textColor"
                         android:id="@+id/amount_edt"/>
 
                 </RelativeLayout>
@@ -63,6 +66,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="?attr/textColor"
                         android:text="@string/TYPE"/>
 
                 </RelativeLayout>
@@ -76,6 +80,7 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="?attr/textColor"
                         android:id="@+id/type_edt"/>
 
                 </RelativeLayout>
@@ -97,6 +102,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="?attr/textColor"
                         android:text="@string/NOTE"/>
 
                 </RelativeLayout>
@@ -110,6 +116,7 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="?attr/textColor"
                         android:id="@+id/note_edt"/>
 
                 </RelativeLayout>

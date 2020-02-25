@@ -17,6 +17,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="?attr/bgColor"
             android:orientation="horizontal">
 
             <RelativeLayout
@@ -30,7 +31,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:textAppearanceMedium"
-                    android:textColor="@android:color/black"
+                    android:textColor="?attr/textColor"
                     android:text="@string/expense"/>
 
             </RelativeLayout>
@@ -47,7 +48,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:textAppearanceMedium"
-                    android:textColor="@android:color/black"
+                    android:textColor="?attr/textColor"
                     android:text="00000.00"/>
 
             </RelativeLayout>
@@ -59,6 +60,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_id_expense"
+        android:background="?attr/bgColor"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

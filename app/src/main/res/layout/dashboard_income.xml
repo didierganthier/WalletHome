@@ -5,12 +5,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="10dp"
     android:layout_margin="10dp"
+    android:background="@drawable/custom_shape"
     android:elevation="5dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:background="?attr/bgColor"
         android:orientation="vertical">
 
         <TextView
