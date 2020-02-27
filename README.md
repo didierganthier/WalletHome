@@ -13,9 +13,7 @@
 
 
 ### Notes
-*I had somes issues with bar<br>
-*I also had issues with setting it to a rating corresponding to the movie itself<br>
-*I had issues with setting the rating bar unclickable<br>
+*I had somes issues with adding the changing theme option<br>
 
 ### Open-source libraries/ Cloud database used
 - [Firebase] (https://firebase.google.com)
