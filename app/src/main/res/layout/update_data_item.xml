@@ -3,8 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/custom_shape">
+    android:layout_height="match_parent">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -130,36 +129,36 @@
 
                 <RelativeLayout
                     android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:gravity="center"
-                    android:layout_height="wrap_content">
+                    android:layout_weight="1"
+                    android:gravity="center">
 
                     <Button
                         android:id="@+id/btnUp_Delete"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@android:color/holo_red_dark"
                         android:text="@string/delete"
                         android:textAppearance="?android:textAppearanceMedium"
-                        android:textColor="@android:color/white"
-                        android:background="@android:color/holo_red_dark"/>
+                        android:textColor="@android:color/white" />
 
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:layout_height="wrap_content">
+                    android:layout_weight="1">
 
                     <Button
                         android:id="@+id/btnUp_Update"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@android:color/holo_green_light"
                         android:text="@string/update"
                         android:textAppearance="?android:textAppearanceMedium"
-                        android:textColor="@android:color/white"
-                        android:background="@android:color/holo_green_light"/>
+                        android:textColor="@android:color/white" />
 
                 </RelativeLayout>
 
